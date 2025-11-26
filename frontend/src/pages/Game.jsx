@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import GameSelection from "../assets/components/GameSelection";
+import GameSelection from "../components/GameSelection";
 
-function Home() {
+function Game() {
   return (
     <div style={{ padding: 20 }}>
       
@@ -11,4 +11,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Game;
