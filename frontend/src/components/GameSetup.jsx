@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { MapPin } from "lucide-react";
+import React, {useState} from "react";
+import {ArrowLeft} from "lucide-react";
+import {useNavigate} from "react-router-dom";
+import {MapPin} from "lucide-react";
 
 const colors = ["#d82424ff", "#6abaefff", "#09541eff", "#e6e02eff"]; // white, red, green, yellow
 
@@ -49,13 +49,26 @@ export default function GameSetup() {
     setSelectedToken(tokens[index].id);
   };
 
-  
   const changeEntry = (dir) => {
     setEntry((prev) => Math.max(0, prev + (dir === "+" ? 100 : -100)));
   };
 
+  // const handlePlay = () => {
+  //   alert(`Playing with ${players} players, entry ₹${entry}`);
+  // };
+
   const handlePlay = () => {
-    alert(`Playing with ${players} players, entry ₹${entry}`);
+    // Navigate to OnlinePlay page
+      console.log("Play clicked"); // debug
+
+    navigate("/online-play", {
+      state: {
+        players,
+        entry,
+        selectedToken,
+        selectedColor,
+      },
+    });
   };
 
   return (
@@ -68,7 +81,6 @@ export default function GameSetup() {
       }}
     >
       <div className="w-full max-w-md mt-6">
-     
         <div className="flex justify-between items-center mb-4">
           <button
             onClick={() => navigate(-1)}
@@ -159,7 +171,7 @@ export default function GameSetup() {
                         ? "scale-110 border-yellow-300"
                         : "border-white/20"
                     }`}
-                    style={{ background: c }}
+                    style={{background: c}}
                   />
                 ))}
               </div>
@@ -221,9 +233,7 @@ export default function GameSetup() {
 
               <div className="bg-yellow-300 rounded-xl p-2 w-40 text-blue-900 font-bold shadow-inner">
                 <div className="text-xs text-left">WIN</div>
-                <div className="text-xl">
-                  ₹{(entry * 1.9).toLocaleString()}
-                </div>
+                <div className="text-xl">₹{(entry * 1.9).toLocaleString()}</div>
                 <div className="text-sm text-left mt-1">
                   Entry: {entry.toLocaleString()}
                 </div>
