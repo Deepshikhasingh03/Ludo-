@@ -1,5 +1,5 @@
 import React from "react";
-import {useUser} from "../context/UserContext";
+import { useUser } from "../context/UserContext";
 import {
   FaUserCircle,
   FaCoins,
@@ -11,13 +11,13 @@ import {
   FaComments,
   FaShoppingCart,
 } from "react-icons/fa";
-import {IoDiamondSharp} from "react-icons/io5";
+import { IoDiamondSharp } from "react-icons/io5";
 import ludo from "../assets/ludo.png";
-import {ImMobile} from "react-icons/im";
-import {LuSword} from "react-icons/lu";
-import {FaRobot} from "react-icons/fa";
-import {BsPersonHearts} from "react-icons/bs";
-import {IoReturnDownForwardOutline} from "react-icons/io5";
+import { ImMobile } from "react-icons/im";
+import { LuSword } from "react-icons/lu";
+import { FaRobot } from "react-icons/fa";
+import { BsPersonHearts } from "react-icons/bs";
+import { IoReturnDownForwardOutline } from "react-icons/io5";
 import tournament from "../assets/tournament.png";
 import claim from "../assets/claim.png";
 import snake from "../assets/snake.png";
@@ -28,20 +28,20 @@ import leftIcon3 from "../assets/free.jpeg";
 import rightIcon1 from "../assets/no-ads.jpeg";
 import rightIcon2 from "../assets/target.jpeg";
 import rightIcon3 from "../assets/dab.jpeg";
-import {FaCircle} from "react-icons/fa";
-import {useNavigate} from "react-router-dom";
-import {FaDice} from "react-icons/fa";
-import {IoMail} from "react-icons/io5";
+import { FaCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { FaDice } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
 import backgroundImg from "../assets/bg-ludo.png";
 
 function Home() {
-  const {user} = useUser();
+  const { user } = useUser();
   const navigate = useNavigate();
 
   return (
     <div
       className="min-h-screen flex flex-col items-center mx-1 "
-      style={{backgroundImage: `url(${backgroundImg})`}}
+      style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       {/* ---- TOP NAVBAR ---- */}
       <div className="w-full ">

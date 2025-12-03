@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Settings, ArrowRight, Users, Crown } from "lucide-react";
+import { Settings, ArrowRight, Users, Crown, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const GameSelection = () => {
@@ -16,7 +16,7 @@ const GameSelection = () => {
 
   return (
     <div
-      className="min-h-screen p-4 flex flex-col items-center bg-black/80"
+      className="min-h-screen flex flex-col items-center bg-blue-950"
       style={{
         backgroundImage: `url('/mnt/data/10b3b694-8d41-4d4d-9477-be000f5eb3c4.jpg')`,
         backgroundSize: "cover",
@@ -26,7 +26,12 @@ const GameSelection = () => {
       <div className="w-full max-w-md mt-6">
         {/* header */}
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-2xl font-extrabold text-yellow-300 drop-shadow-lg">LUDO 🎲</h1>
+          <button
+            onClick={() => navigate(-1)}
+            className="text-yellow-300 font-bold bg-blue-900/20 rounded-full p-2"
+          >
+            <ArrowLeft className="w-6 h-6" />
+          </button>
           <div className="flex items-center space-x-3">
             <div className="px-3 py-1 rounded-full bg-yellow-300 text-blue-900 font-bold flex items-center gap-2 shadow-md">
               <span>💰</span>
@@ -40,16 +45,15 @@ const GameSelection = () => {
           <div className="bg-gradient-to-b from-blue-700 to-blue-800 rounded-lg p-6 text-center text-yellow-200">
             <h2 className="text-2xl font-extrabold tracking-wider drop-shadow">SELECT GAME</h2>
 
-            <div className="mt-6 space-y-4">
+            <div className="mt-4 space-y-3">
               {games.map((g) => {
                 const active = selected === g.id;
                 return (
                   <div
                     key={g.id}
                     onClick={() => setSelected(g.id)}
-                    className={`flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-transform transform ${
-                      active ? "scale-105" : ""
-                    }`}
+                    className={`flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-transform transform ${active ? "scale-105" : ""
+                      }`}
                     style={{
                       background: active ? "linear-gradient(90deg,#0b66a6, #083b8a)" : "linear-gradient(90deg,#0b4f7a,#08324f)",
                       boxShadow: active ? "0 8px 20px rgba(255,200,0,0.12), inset 0 0 10px rgba(255,215,0,0.06)" : "0 6px 12px rgba(0,0,0,0.4)",
@@ -83,7 +87,7 @@ const GameSelection = () => {
             </div>
 
             <button
-              onClick={() => navigate("/setup")}
+              onClick={() => navigate("/computer2")}
               className="mt-6 w-1/2 mx-auto bg-gradient-to-r from-yellow-300 to-orange-400 text-blue-900 font-extrabold py-3 rounded-full text-lg shadow-xl hover:scale-105 transition-transform"
             >
               Next
@@ -91,8 +95,8 @@ const GameSelection = () => {
           </div>
         </div>
 
-       
-      
+
+
       </div>
     </div>
   );

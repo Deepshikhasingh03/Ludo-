@@ -28,7 +28,7 @@ const tokens = [
   },
 ];
 
-export default function GameSetup() {
+export default function Teamup2() {
   const navigate = useNavigate();
   const [balance] = useState(0);
 
@@ -36,7 +36,7 @@ export default function GameSetup() {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
 
   const [players, setPlayers] = useState(2);
-
+  const [is5or6, setIs5or6] = useState(false);
   const [entry, setEntry] = useState(1000);
 
   const syncTokenToColor = (tokenId) => {
@@ -49,35 +49,30 @@ export default function GameSetup() {
     setSelectedToken(tokens[index].id);
   };
 
+  
   const changeEntry = (dir) => {
     setEntry((prev) => Math.max(0, prev + (dir === "+" ? 100 : -100)));
   };
 
   const handlePlay = () => {
-    navigate("/online-play", {
-      state: {
-        players,
-        entry,
-        selectedToken,
-        selectedColor,
-      },
-    });
+    alert(`Playing with ${players} players, entry ₹${entry}`);
   };
 
   return (
     <div
-      className="min-h-screen p-2 flex flex-col items-center bg-blue-950"
+      className="min-h-screen p-3 flex flex-col items-center bg-blue-950"
       style={{
         backgroundImage: `url('/mnt/data/ada59db2-3ed0-49bd-99f0-40ef1ee1f6e9.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="w-full max-w-md mt-2">
+      <div className="w-full max-w-md mt-6">
+     
         <div className="flex justify-between items-center mb-4">
           <button
             onClick={() => navigate(-1)}
-            className="text-yellow-300 font-bold bg-blue-900/20 rounded-full p-2"
+            className="text-yellow-300 font-bold bg-blue- rounded-full p-2"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
@@ -91,8 +86,8 @@ export default function GameSetup() {
         </div>
 
         {/* Token / Color section */}
-        <section className="bg-gradient-to-b from-blue-800 to-blue-900 rounded-xl p-1 border-4 border-yellow-400/90 mb-2">
-          <div className="bg-gradient-to-b from-blue-700 to-blue-800 rounded-md p-5 text-center text-yellow-200">
+        <section className="bg-blue-950 rounded-xl p-1 border-4 border-yellow-400/90 mb-4">
+          <div className="bg-gradient-to-b from-blue-800 to-blue-950 rounded-md p-5 text-center text-yellow-200">
             <h3 className="text-2xl font-extrabold">SELECT TOKEN / COLOR</h3>
 
             <div className="mt-4 flex items-center justify-center gap-6">
@@ -101,7 +96,7 @@ export default function GameSetup() {
                   const next =
                     tokens[
                       (tokens.findIndex((t) => t.id === selectedToken) + 3) %
-                      tokens.length
+                        tokens.length
                     ].id;
                   setSelectedToken(next);
                   syncTokenToColor(next);
@@ -119,7 +114,7 @@ export default function GameSetup() {
                       setSelectedToken(t.id);
                       syncTokenToColor(t.id);
                     }}
-                    className={`w-16 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-transform 
+                    className={`w-16 h-16 rounded-lg flex items-center justify-center cursor-pointer transition-transform 
                     ${selectedToken === t.id ? "scale-110" : ""}`}
                     style={{
                       background:
@@ -138,7 +133,7 @@ export default function GameSetup() {
                   const next =
                     tokens[
                       (tokens.findIndex((t) => t.id === selectedToken) + 1) %
-                      tokens.length
+                        tokens.length
                     ].id;
                   setSelectedToken(next);
                   syncTokenToColor(next);
@@ -150,7 +145,7 @@ export default function GameSetup() {
             </div>
 
             {/* Color selection */}
-            <div className="mt-6 border-t-2 border-dashed border-white/10 pt-3 flex flex-col items-center gap-3">
+            <div className="mt-6 border-t-2 border-dashed border-white/10 pt-4 flex flex-col items-center gap-3">
               <div className="flex gap-4">
                 {colors.map((c, i) => (
                   <button
@@ -159,10 +154,11 @@ export default function GameSetup() {
                       setSelectedColor(c);
                       syncColorToToken(c);
                     }}
-                    className={`w-8 h-8 rounded-full border-2 ${selectedColor === c
+                    className={`w-8 h-8 rounded-full border-2 ${
+                      selectedColor === c
                         ? "scale-110 border-yellow-300"
                         : "border-white/20"
-                      }`}
+                    }`}
                     style={{ background: c }}
                   />
                 ))}
@@ -171,59 +167,25 @@ export default function GameSetup() {
           </div>
         </section>
 
-        {/* Player selection */}
-        <section className="bg-gradient-to-b from-blue-800 to-blue-900 rounded-xl p-1 border-4 border-yellow-400/90 mb-2">
-          <div className="bg-gradient-to-b from-blue-700 to-blue-800 rounded-md p-6 text-center text-yellow-200">
-            <h3 className="text-2xl font-extrabold">SELECT PLAYERS</h3>
-
-            <div className="mt-6 flex flex-col items-start gap-4">
-              <label className="flex items-center gap-4">
-                <div
-                  onClick={() => setPlayers(2)}
-                  className={`w-10 h-10 rounded-full flex items-center justify-center border-4 cursor-pointer 
-                  ${players === 2
-                      ? "bg-yellow-300 border-yellow-400 text-blue-900"
-                      : "border-yellow-300/50 text-yellow-300"
-                    }`}
-                >
-                  ✔
-                </div>
-                <span className="text-lg font-bold">2 PLAYERS</span>
-              </label>
-
-              <label className="flex items-center gap-4">
-                <div
-                  onClick={() => setPlayers(4)}
-                  className={`w-10 h-10 rounded-full flex items-center justify-center border-4 cursor-pointer 
-                  ${players === 4
-                      ? "bg-yellow-300 border-yellow-400 text-blue-900"
-                      : "border-yellow-300/50 text-yellow-300"
-                    }`}
-                >
-                  ✔️
-                </div>
-                <span className="text-lg font-bold">4 PLAYERS</span>
-              </label>
-            </div>
-          </div>
-        </section>
-
+      
         {/* Select Game */}
-        <section className="bg-gradient-to-b from-blue-800 to-blue-900 rounded-xl  border-4 border-yellow-400/90 mb-2">
-          <div className="bg-gradient-to-b from-blue-700 to-blue-800 rounded-md p-6 text-center text-yellow-200">
+        <section className="bg-gradient-to-b from-blue-800 to-blue-900 rounded-xl p-1 border-4 border-yellow-400/90 mb-6">
+          <div className="bg-gradient-to-b from-blue-800 to-blue-950 rounded-md p-6 text-center text-yellow-200">
             <h3 className="text-2xl font-extrabold">SELECT GAME</h3>
 
-            <div className="mt-4 flex items-center justify-center gap-5">
+            <div className="mt-6 flex items-center justify-center gap-6">
               <button
                 onClick={() => changeEntry("-")}
-                className="w-12 h-12 rounded-md border-2 border-white/20 text-xl"
+                className="w-12 h-12 rounded-md border-2 border-white/20 text-2xl"
               >
                 −
               </button>
 
-              <div className="bg-yellow-300 rounded-xl p-2 w-32 text-blue-900 font-bold shadow-inner">
+              <div className="bg-yellow-300 rounded-xl p-2 w-40 text-blue-900 font-bold shadow-inner">
                 <div className="text-xs text-left">WIN</div>
-                <div className="text-xl">₹{(entry * 1.9).toLocaleString()}</div>
+                <div className="text-xl">
+                  ₹{(entry * 1.9).toLocaleString()}
+                </div>
                 <div className="text-sm text-left mt-1">
                   Entry: {entry.toLocaleString()}
                 </div>
@@ -239,7 +201,7 @@ export default function GameSetup() {
 
             <button
               onClick={handlePlay}
-              className="mt-4 w-1/2 mx-auto bg-gradient-to-r from-yellow-300 to-orange-400 text-blue-900 font-extrabold py-3 rounded-full text-lg shadow-xl hover:scale-105 transition-transform"
+              className="mt-6 w-1/2 mx-auto bg-gradient-to-r from-yellow-300 to-orange-400 text-blue-900 font-extrabold py-3 rounded-full text-lg shadow-xl hover:scale-105 transition-transform"
             >
               Play
             </button>
