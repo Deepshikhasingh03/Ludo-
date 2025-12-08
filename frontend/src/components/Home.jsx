@@ -53,7 +53,8 @@ function Home() {
           {/* LEFT SIDE = PROFILE + LEVEL */}
           <div className="flex flex-col items-center relative z-10">
             {/* PROFILE IMAGE WRAPPER (for positioning the green dot) */}
-            <div className="relative">
+            <div  onClick={() => navigate("/profile")}
+            className="relative">
               {/* PROFILE IMAGE */}
               {user?.profilePic ? (
                 <img
@@ -105,7 +106,9 @@ function Home() {
           </div>
 
           {/* SETTINGS */}
-          <FaCog className="text-white text-2xl ml-3 cursor-pointer" />
+          <div  onClick={() => navigate("/settings")}>
+            <FaCog className="text-white text-2xl ml-3 cursor-pointer" />
+          </div>
 
           {/* MAIL */}
           <div className="relative ml-3 cursor-pointer">
@@ -132,7 +135,8 @@ function Home() {
             </div>
 
             {/* SEARCH */}
-            <div className="bg-[#0D4FB8] p-2 rounded-lg border border-blue-300 cursor-pointer">
+            <div  onClick={() => navigate("/search")}
+            className="bg-[#0D4FB8] p-2 rounded-lg border border-blue-300 cursor-pointer">
               <FaSearch className="text-yellow-200 text-xl" />
             </div>
           </div>
@@ -207,7 +211,7 @@ function Home() {
       <div className="mt-5 grid grid-cols-3 sm:grid-cols-3 gap-4 sm:gap-6">
         {/* ONLINE */}
         <div
-          onClick={() => navigate("/game")}
+          onClick={() => navigate("/online-play")}
           className="flex flex-col items-center cursor-pointer"
         >
           <div className="w-28 md:w-40 rounded-2xl overflow-hidden shadow-lg shadow-black border-2 border-yellow-600 transition-all duration-300 hover:scale-105 hover:shadow-yellow-300/40 hover:shadow-xl">
@@ -230,7 +234,7 @@ function Home() {
 
         {/* TEAM UP */}
         <div
-          onClick={() => navigate("/team")}
+          onClick={() => navigate("/teamup")}
           className="flex flex-col items-center cursor-pointer"
         >
           <div className="w-28 md:w-40 rounded-2xl overflow-hidden shadow-lg shadow-black border-2 border-yellow-600 transition-all duration-300 hover:scale-105 hover:shadow-yellow-300/40 hover:shadow-xl">
@@ -253,7 +257,7 @@ function Home() {
 
         {/* FRIENDS */}
         <div
-          onClick={() => navigate("/Friends")}
+          onClick={() => navigate("/Friend")}
           className="flex flex-col items-center cursor-pointer"
         >
           <div className="w-28 md:w-40 rounded-2xl overflow-hidden shadow-lg shadow-black border-2 border-yellow-600 transition-all duration-300 hover:scale-105 hover:shadow-yellow-300/40 hover:shadow-xl">
@@ -275,11 +279,10 @@ function Home() {
         </div>
 
         {/* COMPUTER — CENTERED UNDER 1 & 2 */}
-        <div
-          onClick={() => navigate("/computer")}
-          className="col-span-3  flex justify-center sm:gap-20 gap-8 mt-1 cursor-pointer"
+        <div className="col-span-3  flex justify-center sm:gap-20 gap-8 mt-1 cursor-pointer"
         >
-          <div className="flex flex-col items-center">
+          <div  onClick={() => navigate("/pteamup")}
+           className="flex flex-col items-center">
             <div className="w-28 md:w-40 rounded-2xl overflow-hidden shadow-lg shadow-black border-2 border-yellow-600 transition-all duration-300 hover:scale-105 hover:shadow-yellow-300/40 hover:shadow-xl">
               <div className="bg-blue-700 flex justify-center items-center py-3">
                 <FaRobot className="text-3xl text-white" />
@@ -294,7 +297,7 @@ function Home() {
 
           {/* PASS N PLAY — CENTERED BETWEEN 2 & 3 */}
           <div
-            onClick={() => navigate("/passplay")}
+            onClick={() => navigate("/passn")}
             className="flex flex-col items-center"
           >
             <div className="w-28 md:w-40 rounded-2xl overflow-hidden shadow-lg shadow-black border-2 border-yellow-600 transition-all duration-300 hover:scale-105 hover:shadow-yellow-300/40 hover:shadow-xl">

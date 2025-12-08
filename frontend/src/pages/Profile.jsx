@@ -14,9 +14,9 @@ import {
   FaFacebook,
   FaArrowLeft,
 } from "react-icons/fa";
-import pic1 from "../assets/pic-1.jpg";
-import pic5 from '../assets/pic-5.jpg'
-import flag from '../assets/flag.avif'
+// import pic1 from "../assets/pic-1.jpg";
+// import pic5 from '../assets/pic-5.jpg'
+// import flag from '../assets/flag.avif'
 import { FaNoteSticky } from "react-icons/fa6";
 import { MdSendToMobile } from "react-icons/md";
 import { IoDiamondSharp, IoGameControllerOutline } from "react-icons/io5";
@@ -94,7 +94,7 @@ function Profile() {
   <img
     src={profile.avatar || pic5}
     className="w-16 h-16 rounded-xl border-2 border-yellow-300 object-cover shadow cursor-pointer"
-    onClick={() => navigate("/edit-profile")}
+    onClick={() => navigate("/editprofile")}
   />
 
   {/* DETAILS */}
@@ -222,7 +222,7 @@ function Profile() {
 
         {/* EDIT PROFILE */}
         <div className="flex justify-center mt-2">
-          <button onClick={()=>navigate('/edit-profile')} className="bg-blue-600 text-white text-sm font-bold px-5 py-1 cursor-pointer transition-transform hover:scale-105 rounded-full border-2 border-yellow-300 shadow flex items-center gap-2">
+          <button onClick={()=>navigate('/editprofile')} className="bg-blue-600 text-white text-sm font-bold px-5 py-1 cursor-pointer transition-transform hover:scale-105 rounded-full border-2 border-yellow-300 shadow flex items-center gap-2">
             ✏️ Edit Profile
           </button>
         </div>

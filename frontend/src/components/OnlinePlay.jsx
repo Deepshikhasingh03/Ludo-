@@ -24,14 +24,14 @@ export default function OnlinePlay() {
       <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center">Play Online</h1>
 
       {/* Play as Me */}
-      <div className="bg-blue-800 p-4 sm:p-6 rounded-xl shadow-lg w-full max-w-sm mb-6 flex flex-col items-center">
-        <h2 className="text-lg sm:text-xl font-bold mb-3 text-center">Play as Me</h2>
+      <div className="bg-blue-600 p-4 sm:p-6 rounded-xl shadow-lg w-full max-w-sm mb-6 flex flex-col items-center">
+        <h2 className="text-lg sm:text-xl text-white font-bold mb-3 text-center">Play as Me</h2>
         <input
           type="text"
           placeholder="Enter your name"
           value={playerName}
           onChange={(e) => setPlayerName(e.target.value)}
-          className="w-full p-2 sm:p-3 rounded-md text-black text-sm sm:text-base"
+          className="w-full p-2 sm:p-3 rounded-md text-semibold sm:text-base"
         />
         <button
           onClick={() => { setSearching(false); handleContinue(); }}
@@ -42,7 +42,7 @@ export default function OnlinePlay() {
       </div>
 
       {/* Search Online Player */}
-      <div className="bg-blue-800 p-4 sm:p-6 rounded-xl shadow-lg w-full max-w-sm flex flex-col items-center">
+      <div className="bg-blue-600 p-4 sm:p-6 rounded-xl shadow-lg w-full max-w-sm flex flex-col items-center">
         <h2 className="text-lg sm:text-xl font-bold mb-3 text-center">Search Online Player</h2>
         <button
           onClick={() => { setSearching(true); handleContinue(); }}

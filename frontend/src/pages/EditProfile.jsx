@@ -13,15 +13,15 @@ import {
 import { FcGoogle } from "react-icons/fc";
 import { IoDiamondSharp, IoGameControllerOutline } from "react-icons/io5";
 import { MdSendToMobile } from "react-icons/md";
-import flag from '../assets/flag.avif'
-import pic1 from '../assets/pic-1.jpg'
-import pic2 from '../assets/pic-2.jpg'
-import pic3 from '../assets/pic-3.jpg'
-import pic4 from '../assets/pic-4.jpg'
-import pic5 from '../assets/pic-5.jpg'
-import pic6 from '../assets/pic-6.jpg'
-import pic7 from '../assets/pic-7.jpg'
-import pic8 from '../assets/pic-8.jpg'
+// import flag from '../assets/flag.avif'
+// import pic1 from '../assets/pic-1.jpg'
+// import pic2 from '../assets/pic-2.jpg'
+// import pic3 from '../assets/pic-3.jpg'
+// import pic4 from '../assets/pic-4.jpg'
+// import pic5 from '../assets/pic-5.jpg'
+// import pic6 from '../assets/pic-6.jpg'
+// import pic7 from '../assets/pic-7.jpg'
+// import pic8 from '../assets/pic-8.jpg'
 
 function EditProfile() {
   const [selectedImg, setSelectedImg] = useState(pic3);

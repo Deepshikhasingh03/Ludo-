@@ -15,6 +15,11 @@ import Pclassic from "./components/GameModes/Pclassic";
 import Pteamup from "./components/GameModes/Pteamup";
 import Teamup from "./components/GameModes/Teamup";
 import Teamup2 from "./components/GameModes/Teamup2";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
+import Search from "./pages/Search";
+import EditProfile from "./pages/EditProfile";
+import PlayUi from "./components/GamePlay/PlayUi";
 
 function App() {
   return (
@@ -40,6 +45,14 @@ function App() {
         <Route path="/social" element={<Social />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/store" element={<Store />} />
+
+         {/* <Route path="/profile" element={<Profile/>} /> */}
+        <Route path="/settings" element={<Settings />} />
+         <Route path="/search" element={<Search />} />
+          <Route path="/editprofile" element={<EditProfile />} />
+
+         <Route path="/playui" element={<PlayUi />} />
+
       </Routes>
     </BrowserRouter>
   );
