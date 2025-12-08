@@ -46,7 +46,7 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/store" element={<Store />} />
 
-         {/* <Route path="/profile" element={<Profile/>} /> */}
+         <Route path="/profile" element={<Profile/>} />
         <Route path="/settings" element={<Settings />} />
          <Route path="/search" element={<Search />} />
           <Route path="/editprofile" element={<EditProfile />} />

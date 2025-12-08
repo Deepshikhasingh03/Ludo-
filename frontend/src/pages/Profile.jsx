@@ -14,9 +14,8 @@ import {
   FaFacebook,
   FaArrowLeft,
 } from "react-icons/fa";
-// import pic1 from "../assets/pic-1.jpg";
-// import pic5 from '../assets/pic-5.jpg'
-// import flag from '../assets/flag.avif'
+import pic5 from '../assets/pic-5.jpg'
+import flag from '../assets/flag.avif'
 import { FaNoteSticky } from "react-icons/fa6";
 import { MdSendToMobile } from "react-icons/md";
 import { IoDiamondSharp, IoGameControllerOutline } from "react-icons/io5";
