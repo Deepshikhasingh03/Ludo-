@@ -159,7 +159,7 @@ export default function LudoGameSetup() {
       </div>
 
       {/* Play Buttons */}
-      <div className="space-y-3 mb-4 relative z-10">
+      <div onClick={() => navigate("/playui")} className="space-y-3 mb-4 relative z-10">
         <button className="bg-gradient-to-b from-blue-400 to-blue-600 text-white font-black text-3xl px-20 py-3 rounded-full border-4 border-yellow-400 shadow-2xl hover:scale-105 transition-transform">
           Play
         </button>

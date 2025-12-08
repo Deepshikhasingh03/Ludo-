@@ -110,7 +110,7 @@ export default function CreateRoom() {
       </div>
 
       {/* CREATE ROOM */}
-      <button className="mt-6 text-white font-bold text-xl bg-blue-700 px-10 py-3 rounded-full border-[5px] border-yellow-400 shadow-[0_0_15px_#FFD700] hover:scale-105 transition-transform">
+      <button onClick={() => navigate("/playui")} className="mt-6 text-white font-bold text-xl bg-blue-700 px-10 py-3 rounded-full border-[5px] border-yellow-400 shadow-[0_0_15px_#FFD700] hover:scale-105 transition-transform">
         Create Room
       </button>
 

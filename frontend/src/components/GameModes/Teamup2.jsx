@@ -200,7 +200,7 @@ export default function Teamup2() {
             </div>
 
             <button
-              onClick={handlePlay}
+              onClick={() => navigate("/playui")}
               className="mt-6 w-1/2 mx-auto bg-gradient-to-r from-yellow-300 to-orange-400 text-blue-900 font-extrabold py-3 rounded-full text-lg shadow-xl hover:scale-105 transition-transform"
             >
               Play

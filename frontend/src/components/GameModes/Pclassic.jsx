@@ -101,7 +101,7 @@ export default function ClassicSetup() {
         </div>
 
         {/* Play button */}
-        <div className="mt-6 flex flex-col items-center">
+        <div onClick={() => navigate("/playui")} className="mt-6 flex flex-col items-center">
           <button className="w-48 py-3 rounded-full bg-gradient-to-b from-[#1d7fff] to-[#0059c8] text-white font-black border-4 border-yellow-400">
             Play
           </button>
